@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff4e8a,#6a5cff);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+#startScreen{
+text-align:center;
+}
+
+#surpriseBtn{
+padding:20px 40px;
+font-size:28px;
+border:none;
+border-radius:50px;
+background:white;
+color:#ff1493;
+cursor:pointer;
+box-shadow:0 0 30px white;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.1);
+}
+}
+
+#birthdayContent{
+display:none;
+text-align:center;
+color:white;
+}
+
+#birthdayContent img{
+width:280px;
+height:280px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid white;
+box-shadow:0 0 40px pink;
+animation:zoomIn 2s;
+}
+
+h1{
+margin-top:20px;
+font-size:50px;
+text-shadow:0 0 20px white;
+}
+
+p{
+margin-top:15px;
+font-size:22px;
+padding:0 20px;
+}
+
+@keyframes zoomIn{
+from{
+opacity:0;
+transform:scale(0.3);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+.heart{
+position:absolute;
+font-size:30px;
+animation:fly 6s linear infinite;
+}
+
+@keyframes fly{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div id="startScreen">
+<button id="surpriseBtn">🎁 Open Surprise</button>
+</div>
+
+<div id="birthdayContent">
+<img src="D:\temparory\IMG-20251115-WA0010.jpg" alt="Birthday Girl">
+
+<h1>🎂 Happy Birthday ❤️</h1>
+
+<p>
+Dear LakshmiSri 💖<br><br>
+May your smile always shine brighter than the stars. ✨<br>
+May happiness, love and success follow you forever. 🌹<br>
+You are truly special and unforgettable. ❤️
+</p>
+</div>
+
+<script>
+
+document.getElementById("surpriseBtn").onclick=function(){
+
+document.getElementById("startScreen").style.display="none";
+
+// Hearts animation
+for(let i=0;i<120;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*30)+"px";
+heart.style.animationDuration=(3+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+}
+
+// Show birthday content after 3 seconds
+setTimeout(()=>{
+document.getElementById("birthdayContent").style.display="block";
+},3000);
+
+};
+
+</script>
+
+</body>
+</html>
